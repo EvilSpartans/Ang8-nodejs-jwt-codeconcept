@@ -1,0 +1,52 @@
+
+<!-- Nav -->
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" routerLink="/">{{title}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/jobs">Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/jobs/add">AddJobs</a>
+        </li>
+
+      </ul>
+
+          <a *ngIf="!authService.userIsLoggedIn()" class="nav-link" routerLink="/login">Login</a>
+
+          <a *ngIf="authService.userIsLoggedIn()" class="nav-link" routerLink="/profile">Profile</a>
+
+          <a (click)="authService.logOut()" *ngIf="authService.userIsLoggedIn()" class="nav-link" routerLink="/login">Logout</a>
+
+          <a *ngIf="!authService.userIsLoggedIn()"  class="nav-link" routerLink="/register">Register</a>
+
+      <form #searchForm="ngForm" (ngSubmit)="searchJobs(searchForm.value)" class="form-inline my-2 my-lg-0">
+
+        <input ngModel name="term" required class="form-control mr-sm-2" type="text" placeholder="Search">
+
+        <input type="hidden" ngModel name="place">
+
+        <button [disabled]="searchForm.invalid" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+
+      </form>
+    </div>
+  </nav>
+
+  <!-- Body -->
+
+  <div class="" [@routeAnimations]="prepareRoute(outlet)" >
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+
+
+
+

@@ -1,0 +1,81 @@
+
+<div class="container">
+
+  <h1 class=" title mt-5">Espace membre</h1>
+
+  <!-- informations -->
+<div class="d-flex justify-content-center">
+
+  <div class="loggin">
+
+    <div class="card text-center mt-5 mb-5">
+
+      <span class="border border-primary">
+
+      <div class="card-header bg-primary text-light">
+        <h3>Information</h3>
+      </div>
+<p>Veuillez renseigner votre <strong>email</strong> et votre <strong>mot de passe</strong> définis lors de l'inscription</p>
+  </span>
+  </div>
+
+</div>
+
+</div>
+
+<!-- Connexion -->
+  <div *ngIf="!isAuthenticated" class="d-flex justify-content-center">
+
+    <div class="loggin">
+
+      <div class="card text-center mt-5 mb-5">
+
+        <span class="border border-primary">
+
+        <div class="card-header bg-primary text-light">
+          <h3>Connexion</h3>
+        </div>
+
+
+        <form class="d-flex flex-column justify-content-center" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+          <input type="text"
+                  class="login-input"
+                  ngModel
+                  name="email"
+                  placeholder="Email"
+                  required>
+
+                  <input type="password"
+                        class="login-input"
+                        ngModel
+                        name="password"
+                        placeholder="Mot de passe"
+                        required>
+
+                        <button type="submit" class="btn btn-secondary" [disabled]="loginForm.invalid">Confirmer</button>
+        </form>
+    </span>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+<div *ngIf="isAuthenticated">
+{{ welcomeMessage }}
+  <pre>
+    {{ jbbData | json }}
+  </pre>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer bg-primary font-small special-color-dark pt-4">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center text-white py-3">© 2020 Copyright:
+    EvilSpartans
+  </div>
+  <!-- Copyright -->
+
+</footer>

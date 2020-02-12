@@ -1,0 +1,45 @@
+<div class="container">
+
+<h1 class=" title mt-5">Liste des annonces</h1>
+
+ <div class="card mt-5 mb-5" *ngFor="let job of jobs">
+
+<span class="border border-primary">
+
+  <div class="card-header bg-primary text-light">
+    <h3 class="card-title"> <a class="text-light" href="#" [routerLink]="['/jobs', job.id]">{{ job.title }}</a>
+    </h3>
+    <div>
+      {{ job.company }} - {{ job.city }} - {{ job.zipcode }}
+    </div>
+  </div>
+
+    <div class="card-body text-dark">
+      {{ job.description }}
+    </div>
+
+    <div class="card-footer bg-light text-secondary">
+      {{ job.publishdate | daysAgo }}
+    </div>
+
+</span>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="page-footer bg-primary font-small special-color-dark pt-4">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center text-white py-3">© 2020 Copyright:
+    EvilSpartans
+  </div>
+  <!-- Copyright -->
+
+</footer>

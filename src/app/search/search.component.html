@@ -1,0 +1,11 @@
+<div>
+  <form #searchForm="ngForm" (ngSubmit)="searchJobs(searchForm.value)" class="form-inline my-2 my-lg-0">
+    <input ngModel name="term" required class="form-control mr-sm-2" type="text" placeholder="Saisir un titre">
+    <input type="text"
+        ngModel
+        class="form-control mr-sm-2"
+        name="place"
+        placeholder="Rennes, 35 ...">
+    <button [disabled]="searchForm.invalid" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</div>

@@ -1,0 +1,69 @@
+<div class="container">
+
+ <h1 class=" title mt-5">Détail de l'annonce</h1>
+
+
+<div *ngIf="jobDetails">
+
+  <div class="card mt-5">
+
+    <span class="border border-primary">
+
+    <div class="card-header bg-primary text-light">
+      <h3>{{jobDetails.title}}</h3>
+    </div>
+
+    <div class="card-body text-dark">
+      {{jobDetails.company}} <br>
+      {{jobDetails.city}} - {{jobDetails.zipcode}} <br>
+      {{jobDetails.contract}} <br>
+      <hr>
+      publié le {{jobDetails.publishdate | toShortDate}} <br>
+      actualisé le {{jobDetails.lastupdate | toShortDate}} <br>
+      salaire : {{jobDetails.salary}} {{jobDetails.currency | toMoneySymbol}} <br>
+      <hr>
+      <b>Descriptif du poste</b>
+
+      <div>
+        {{jobDetails.description}}
+      </div>
+
+      <hr>
+
+      <div>
+        date de démarrage : {{jobDetails.startdate | toShortDate}} <br>
+        statut : {{jobDetails.status}} <br>
+        déplacements : {{jobDetails.area}}
+      </div>
+
+    </div>
+
+  </span>
+
+  </div>
+
+</div>
+
+<div *ngIf="errorMessage">
+  Désolé : {{ errorMessage }}
+</div>
+
+<div *ngIf="error">
+  <pre>{{ error | json }}</pre>
+
+</div>
+
+<button class="btn btn-secondary mt-4" backButton>Retour</button>
+
+</div>
+
+<!-- Footer -->
+<footer class="page-footer bg-primary font-small special-color-dark pt-4">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center text-white py-3">© 2020 Copyright:
+    EvilSpartans
+  </div>
+  <!-- Copyright -->
+
+</footer>

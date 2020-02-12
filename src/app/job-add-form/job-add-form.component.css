@@ -1,0 +1,11 @@
+.card {
+  flex-wrap: wrap;
+}
+
+.d-flex {
+  flex-wrap: wrap;
+}
+
+textarea {
+  width: 275px;
+}

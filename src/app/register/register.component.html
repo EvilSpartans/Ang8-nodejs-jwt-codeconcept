@@ -1,0 +1,99 @@
+
+<div class="container">
+
+  <h1 class=" title mt-5">Créer un compte</h1>
+
+<!-- informations -->
+<div class="d-flex justify-content-center">
+
+  <div class="loggin">
+
+    <div class="card text-center mt-5 mb-5">
+
+      <span class="border border-primary">
+
+      <div class="card-header bg-primary text-light">
+        <h3>Information</h3>
+      </div>
+<p>Veuillez vous <strong>déconnecter</strong> puis vous <strong>reconnecter</strong> après votre inscription pour accéder correctement à l'espace membre</p>
+  </span>
+  </div>
+
+</div>
+
+</div>
+
+<!-- Inscription -->
+  <div class="d-flex justify-content-center">
+
+    <div class="loggin">
+
+      <div class="card text-center mt-5 mb-5">
+
+        <span class="border border-primary">
+
+        <div class="card-header bg-primary text-light">
+          <h3>Inscription</h3>
+        </div>
+
+
+        <form class="d-flex flex-column justify-content-center" #registerForm="ngForm" (ngSubmit)="register(registerForm.value)">
+
+          <input type="text"
+                  class="register-input"
+                  ngModel
+                  name="email"
+                  placeholder="Email"
+                  required>
+
+                  <input type="text"
+                  class="register-input"
+                  ngModel
+                  name="nickname"
+                  placeholder="Pseudo"
+                  required>
+
+                  <input type="password"
+                        class="register-input"
+                        ngModel
+                        name="password"
+                        placeholder="Mot de passe"
+                        required>
+
+                  <input type="password"
+                        class="register-input"
+                        ngModel
+                        name="confirm-password"
+                        placeholder="Confirmer le mot de passe"
+                        required>
+
+                        <button type="submit" class="btn btn-secondary" [disabled]="registerForm.invalid">Confirmer</button>
+        </form>
+    </span>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+</div>
+
+<!-- <div *ngIf="isAuthenticated">
+{{ welcomeMessage }}
+  <pre>
+    {{ jbbData | json }}
+  </pre>
+</div> -->
+
+<!-- Footer -->
+<footer class="page-footer bg-primary font-small special-color-dark pt-4">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center text-white py-3">© 2020 Copyright:
+    EvilSpartans
+  </div>
+  <!-- Copyright -->
+
+</footer>
